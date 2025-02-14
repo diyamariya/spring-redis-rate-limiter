@@ -1,10 +1,10 @@
 Implemented a **rate limiter with redis**, which uses sorted sets (ZSET) to efficiently track and expire old requests. 
 Spring Boot framework used for Spring MVC to define REST API endpoints here. 
 
--A user sends an API request (Spring Boot handles the request).
--The interceptor checks Redis to see how many requests the user made in a given time window.
--If the user exceeds the limit, Redis blocks further requests (429 Too Many Requests).
--If the user is within the limit, the request proceeds to the controller.
+- A user sends an API request (Spring Boot handles the request).
+- The interceptor checks Redis to see how many requests the user made in a given time window.
+- If the user exceeds the limit, Redis blocks further requests (429 Too Many Requests).
+- If the user is within the limit, the request proceeds to the controller.
 
 Used Postman to demonstrate. 
 In Postman, make a GET request to the port, in my case http://localhost:8080/api/test
